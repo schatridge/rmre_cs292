@@ -71,10 +71,10 @@ public class PassageUserComparator {
 			break;
 		}
 		
-		unparsedStemmedWords = (unparsedStemmedWords.split("["))[1];
-		unparsedStemmedWords = (unparsedStemmedWords.split("]"))[0].trim();
+		unparsedStemmedWords = (unparsedStemmedWords.split("\\["))[1];
+		unparsedStemmedWords = (unparsedStemmedWords.split("\\]"))[0].trim();
 		unparsedStemmedWords = unparsedStemmedWords.substring(1, unparsedStemmedWords.length()-2);
-		String[] allWordObjects = unparsedStemmedWords.split("}, {");
+		String[] allWordObjects = unparsedStemmedWords.split("\\}, \\{");
 		for (String obj : allWordObjects) {
 			String[] pairs = obj.split(", ");
 			String[] stemPair = pairs[0].split(": ");
@@ -109,10 +109,10 @@ public class PassageUserComparator {
 			break;
 		}
 		
-		unparsedKnownWords = (unparsedKnownWords.split("["))[1];
-		unparsedKnownWords = (unparsedKnownWords.split("]"))[0].trim();
+		unparsedKnownWords = (unparsedKnownWords.split("\\["))[1];
+		unparsedKnownWords = (unparsedKnownWords.split("\\]"))[0].trim();
 		unparsedKnownWords = unparsedKnownWords.substring(1, unparsedKnownWords.length()-2);
-		String[] allWordObjects = unparsedKnownWords.split("}, {");
+		String[] allWordObjects = unparsedKnownWords.split("\\}, \\{");
 		for (String obj : allWordObjects) {
 			String[] pairs = obj.split(", ");
 			String[] stemPair = pairs[0].split(": ");
